@@ -12,10 +12,6 @@ resource "aws_dynamodb_table" "lapko_tfstate_lock" {
 
 resource "aws_s3_bucket" "lapko_tfstate" {
   bucket = "lapko-tfstate"
-
-  tags = {
-    Name = "lapko-tfstate"
-  }
 }
 
 resource "aws_cloudwatch_metric_alarm" "account_billing_alarm" {

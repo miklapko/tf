@@ -32,10 +32,6 @@ resource "cloudflare_record" "domainconnectdontevenaskme" {
 
 resource "aws_s3_bucket" "dontevenaskme" {
   bucket = "dontevenask.me"
-
-  tags = {
-    Name = "dontevenask.me"
-  }
 }
 
 resource "aws_s3_bucket_policy" "dontevenaskme" {
@@ -55,10 +51,6 @@ resource "aws_s3_object" "dontevenaskme" {
 resource "aws_acm_certificate" "dontevenaskme" {
   domain_name       = "dontevenask.me"
   validation_method = "DNS"
-
-  tags = {
-    "Name" = "dontevenask.me"
-  }
 }
 
 resource "aws_cloudfront_distribution" "dontevenaskme" {
@@ -104,10 +96,6 @@ resource "aws_cloudfront_distribution" "dontevenaskme" {
   default_root_object = "index.html"
 
   price_class = "PriceClass_100"
-
-  tags = {
-    Name = "dontevenask.me"
-  }
 
   viewer_certificate {
     acm_certificate_arn            = aws_acm_certificate.dontevenaskme.arn
