@@ -21,7 +21,7 @@ resource "aws_cloudwatch_metric_alarm" "account_billing_alarm" {
   evaluation_periods  = "1"
   metric_name         = "EstimatedCharges"
   namespace           = "AWS/Billing"
-  period              = "28800"
+  period              = "21600"
   statistic           = "Maximum"
   threshold           = 20
   alarm_actions       = [aws_sns_topic.sns_alert_topic.arn]
@@ -33,7 +33,7 @@ resource "aws_cloudwatch_metric_alarm" "account_billing_alarm" {
 }
 
 resource "aws_sns_topic" "sns_alert_topic" {
-  name  = "billing-alarm-notification"
+  name = "billing-alarm-notification"
 }
 
 resource "aws_sns_topic_subscription" "user_updates_sqs_target" {
