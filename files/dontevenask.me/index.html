@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta charset="UTF-8">
+<title>dontevenask.me</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+   body{
+    background-color: #000000;
+   } 
+   h1 {
+    background-color: #000000;
+   }
+   p {
+    background-color: #000000;
+    color: #000000;
+   }
+</style>
+<script src=""></script>
+<body>
+<div class="">
+    <center>
+        <iframe id="player" width="100%" src="https://www.youtube.com/embed/3VxNZswJRZs?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Your browser does not support this, try viewing it on YouTube: YOUR URL</iframe>
+      </center>
+      <script>
+        window.addEventListener("load", playerSizer);
+        window.addEventListener("resize", playerSizer);
+        function playerSizer() {
+          var player = document.getElementById("player");
+          var width = player.offsetWidth;
+          player.style.height = (width * 0.5625) + "px";
+        }
+      </script>
+</div>
+</body>
+</html>

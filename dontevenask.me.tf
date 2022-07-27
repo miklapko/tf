@@ -43,6 +43,15 @@ resource "aws_s3_bucket_policy" "dontevenaskme" {
   policy = templatefile("${path.root}/files/cloudfront_s3_policy.tpl", { bucketname = aws_s3_bucket.dontevenaskme.bucket, identity = aws_cloudfront_origin_access_identity.dontevenaskme.id })
 }
 
+resource "aws_s3_object" "dontevenaskme" {
+  for_each = fileset("${path.root}/files/dontevenask.me/", "*")
+
+  bucket = aws_s3_bucket.dontevenaskme.bucket
+  key    = each.value
+  source = "${path.root}/files/dontevenask.me/${each.value}"
+  etag   = filemd5("${path.root}/files/dontevenask.me/${each.value}")
+}
+
 resource "aws_acm_certificate" "dontevenaskme" {
   domain_name       = "dontevenask.me"
   validation_method = "DNS"
