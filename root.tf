@@ -32,3 +32,11 @@ provider "aws" {
 provider "cloudflare" {
   api_token = local.cloudflare["api_token"]
 }
+
+resource "aws_s3_bucket" "lapko_tfstate" {
+  bucket = "lapko-tfstate"
+
+  tags = {
+    Name = "lapko-tfstate"
+  }
+}
