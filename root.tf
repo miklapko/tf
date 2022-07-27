@@ -5,6 +5,8 @@ terraform {
     region                  = "us-east-1"
     shared_credentials_file = "~/personal/creds/aws"
     profile                 = "personal"
+    encrypt                 = true
+    dynamodb_table          = "lapko-tfstate-lock"
   }
 
   required_version = ">= 1.2.5"
@@ -31,12 +33,4 @@ provider "aws" {
 
 provider "cloudflare" {
   api_token = local.cloudflare["api_token"]
-}
-
-resource "aws_s3_bucket" "lapko_tfstate" {
-  bucket = "lapko-tfstate"
-
-  tags = {
-    Name = "lapko-tfstate"
-  }
 }
