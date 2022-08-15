@@ -9,4 +9,6 @@ locals {
   }
 
   aws = split("\n", file("~/personal/creds/aws_github"))
+
+  reddit = split("\n", file("~/personal/creds/reddit"))
 }

@@ -31,13 +31,37 @@ resource "github_repository_file" "workflow" {
 }
 
 resource "github_actions_secret" "aws_access_key_id" {
-  repository = github_repository.chicanerybot.name
-  secret_name = "AWS_ACCESS_KEY_ID"
+  repository      = github_repository.chicanerybot.name
+  secret_name     = "AWS_ACCESS_KEY_ID"
   plaintext_value = local.aws[0]
 }
 
 resource "github_actions_secret" "aws_secret_access_key" {
-  repository = github_repository.chicanerybot.name
-  secret_name = "AWS_SECRET_ACCESS_KEY"
+  repository      = github_repository.chicanerybot.name
+  secret_name     = "AWS_SECRET_ACCESS_KEY"
   plaintext_value = local.aws[1]
+}
+
+resource "github_actions_secret" "reddit_client_id" {
+  repository      = github_repository.chicanerybot.name
+  secret_name     = "REDDIT_CLIENT_ID"
+  plaintext_value = local.reddit[0]
+}
+
+resource "github_actions_secret" "reddit_client_secret" {
+  repository      = github_repository.chicanerybot.name
+  secret_name     = "REDDIT_CLIENT_SECRET"
+  plaintext_value = local.reddit[1]
+}
+
+resource "github_actions_secret" "reddit_password" {
+  repository      = github_repository.chicanerybot.name
+  secret_name     = "REDDIT_PASSWORD"
+  plaintext_value = local.reddit[2]
+}
+
+resource "github_actions_secret" "reddit_username" {
+  repository      = github_repository.chicanerybot.name
+  secret_name     = "REDDIT_USERNAME"
+  plaintext_value = local.reddit[3]
 }
