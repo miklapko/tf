@@ -1,10 +1,9 @@
-/*
 resource "aws_eks_cluster" "personal" {
   name     = "Personal"
   role_arn = aws_iam_role.personal.arn
 
   vpc_config {
-    subnet_ids = [aws_subnet.personal_private.id, aws_subnet.personal_private_1.id]
+    subnet_ids = [data.terraform_remote_state.base.outputs.private_subnet_0_id, data.terraform_remote_state.base.outputs.private_subnet_1_id]
   }
 
   depends_on = [
@@ -78,4 +77,3 @@ resource "aws_iam_role_policy_attachment" "example" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
   role       = aws_iam_role.vpc_cni.name
 }
-*/
