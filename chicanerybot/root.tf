@@ -34,4 +34,5 @@ provider "aws" {
 
 provider "github" {
   token = local.github["token"]
+  owner = "miklapko"
 }
