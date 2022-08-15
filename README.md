@@ -4,7 +4,7 @@
 
 Personal static site for fun. GoDaddy domain subscription + CloudFlare nameservers & DNS + S3 / CloudFront hosting. No I'm not bothering with some 3rd party GoDaddy Terraform provider lol.
 
-## chicanerybot
+## [chicanerybot](https://www.reddit.com/user/YupYepBot/)
 
 Reddit bot that responds with "Yup!" and variants to comments containing "fuck" in `/r/okbuddychicanery`.
 
