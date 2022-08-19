@@ -42,10 +42,21 @@ resource "aws_s3_bucket_policy" "dontevenaskme" {
 resource "aws_s3_object" "dontevenaskme" {
   for_each = fileset("${path.root}/files/dontevenask.me/", "*")
 
-  bucket = aws_s3_bucket.dontevenaskme.bucket
-  key    = each.value
-  source = "${path.root}/files/dontevenask.me/${each.value}"
-  etag   = filemd5("${path.root}/files/dontevenask.me/${each.value}")
+  bucket       = aws_s3_bucket.dontevenaskme.bucket
+  key          = each.value
+  source       = "${path.root}/files/dontevenask.me/${each.value}"
+  etag         = filemd5("${path.root}/files/dontevenask.me/${each.value}")
+  content_type = each.value == "index.html" ? "text/html" : each.value == "home.css" ? "text/css" : each.value == "style.css" ? "text/css" : each.value == "package.json" ? "application/json" : ""
+}
+
+resource "aws_s3_object" "dontevenaskme_img" {
+  for_each = fileset("${path.root}/files/dontevenask.me/img/", "*")
+
+  bucket       = aws_s3_bucket.dontevenaskme.bucket
+  key          = each.value
+  source       = "${path.root}/files/dontevenask.me/public/playground_assets/${each.value}"
+  etag         = filemd5("${path.root}/files/dontevenask.me/img/${each.value}")
+  content_type = "image/x-png"
 }
 
 resource "aws_acm_certificate" "dontevenaskme" {
