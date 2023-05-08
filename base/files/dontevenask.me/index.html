@@ -1,152 +1,316 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-    <title>Mikalai Lapko</title>
-    <meta property="og:title" content="Mikalai Lapko" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #222;
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            position: relative;
+            color: #444;
+        }
+
+        th::after, td::after {
+            content: "";
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            bottom: 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .quote {
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #555;
+        }
+
+        footer {
+            background-color: #f5f5f5;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        footer a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .corner-square {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10%;
+            padding-bottom: 10%;
+            background-color: #ec7937;
+            z-index: -1;
+        }
+
+        .corner-image {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 20%;
+            z-index: 10;
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                padding: 1rem;
+            }
+
+            table {
+                font-size: 0.8rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+
+            .corner-square {
+                width: 20%;
+                padding-bottom: 20%;
+            }
+        }
     </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
+    <title>Deployment Outlook Zodiac Forecast</title>
+</head>
+<body>
+    <div class="corner-square"></div>
+    <div class="container">
+        <h1>Production Deployment Zodiac Forecast</h1>
+        <table id="zodiacTable">
+            <tr>
+                <th></th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+            <tr>
+                <th>Aries</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Taurus</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Gemini</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Cancer</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Leo</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Virgo</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Libra</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Scorpio</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Sagittarius</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Capricorn</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Aquarius</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Pisces</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="quote" id="quote"></div>
 
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
-
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      data-tag="font"
-    />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div>
-      <link href="./home.css" rel="stylesheet" />
-
-      <div class="home-container">
-        <img
-          alt="image"
-          src="1-1500w.png"
-          class="home-image"
-        />
-        <img
-          alt="image"
-          src="untitled-1-200h.png"
-          class="home-image01"
-        />
-        <div class="home-container01">
-          <div class="home-container02">
-            <img
-              alt="image"
-              src="1024px-amazon_web_services_logo.svg-200h.png"
-              class="home-image02"
-            />
-            <div class="home-container03">
-              <img
-                alt="image"
-                src="tf-200h.png"
-                class="home-image03"
-              />
-              <img
-                alt="image"
-                src="kubernetes_logo_without_workmark.svg-200h.png"
-                class="home-image04"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="home-container04">
-          <img
-            alt="image"
-            src="prometheus_software_logo.svg-200h.png"
-            class="home-image05"
-          />
-          <img
-            alt="image"
-            src="grafana-logo-15ba0afa8a-seeklogo.com-200w.png"
-            class="home-image06"
-          />
-          <img
-            alt="image"
-            src="opsgenie-logo-4371b345f2-seeklogo.com-200w.png"
-            class="home-image07"
-          />
-          <img
-            alt="image"
-            src="elastic-stack.png"
-            class="home-image08"
-          />
-        </div>
-        <div class="home-container05">
-          <div class="home-container06">
-            <img
-              alt="image"
-              src="teamcity_icon-200h.png"
-              class="home-image09"
-            />
-            <img
-              alt="image"
-              src="atlassian_bamboo_logo_icon_168564-200h.png"
-              class="home-image10"
-            />
-          </div>
-          <img
-            alt="image"
-            src="codefresh_logo_vertical_lightbkgd-200h.png"
-            class="home-image11"
-          />
-        </div>
-        <div class="home-container07">
-          <div class="home-container08">
-            <div class="home-container09">
-              <div class="home-container10">
-                <div class="home-container11">
-                  <img
-                    alt="image"
-                    src="logo-linux-200h.png"
-                    class="home-image12"
-                  />
-                  <img
-                    alt="image"
-                    src="git-icon-1788c-200h.png"
-                    class="home-image13"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img
-          alt="image"
-          src="mf-doom-armeen-powerpuff-transparent-200w.png"
-          class="home-image14"
-        />
-      </div>
+        <footer>
+            <div>I love AWS, K8s, Terraform, Python and CI/CD.</div>
+            <div>To balance it out, I also hate ELK and Kustomize.</div>
+            <div>&nbsp;</div>
+            <div>&copy; 2023 Mikalai Lapko. All rights reserved.</div>
+            <div>Contact me: <a href="mailto:calibrono@gmail.com">calibrono@gmail.com</a></div>
+        </footer>
     </div>
-  </body>
+
+    <img src="./image.png" alt="It me" class="corner-image">
+
+    <script>
+        const outlooks = [
+            "😢", // Extremely bad outlook
+            "☹️", // Very poor outlook
+            "🙁", // Negative outlook
+            "😕", // Slightly poor outlook
+            "😐", // Neutral outlook
+            "🙂", // Slightly positive outlook
+            "😀", // Positive outlook
+            "😃", // Very positive outlook
+            "😄", // Extremely positive outlook
+            "😆"  // Enormously positive outlook
+        ];
+
+        function randomOutlook() {
+            return outlooks[Math.floor(Math.random() * outlooks.length)];
+        }
+
+        const tableCells = document.querySelectorAll("#zodiacTable td");
+        tableCells.forEach(cell => {
+            cell.textContent = randomOutlook();
+        });
+
+        const quotes = [
+            "No cost too great.",
+            "In the dark times, should the stars also go out?",
+            "ACAB",
+            "Come up and get me.",
+            "Do you believe the status quo is preferable to chaos and bloodshed?",
+            "This is what happens when you bring a tool to a sword fight.",
+            "I've never had a problem with drugs. I've had problems with the police.",
+            "I am that guy.",
+            "You're right, cop. You're right, I *am* a rotten bastard. I admit it. But I tell ya something. Even though I got a lot of hate inside, I got some friends who ain't got hate inside. They're filled with nothing but love. Their only crime is growing their hair long, smoking a little grass and getting high, looking at the stars at night, writing poetry in the sand. And what do you do? You bust down their doors, man. Dumb-ass cop. You bust down their doors and you bust down their heads. You put 'em behind bars. And you know something funny? They forgive you. I don't.",
+            "You're beautiful!",
+            "Men without ideals are only animals.",
+            "There is a giant ball there. And evil apes. And the evil apes are dukin' it out on the ball.",
+            "Failure. It's about failure."
+        ];
+
+        function randomQuote() {
+            return quotes[Math.floor(Math.random() * quotes.length)];
+        }
+
+        document.getElementById("quote").textContent = randomQuote();
+
+    </script>
+</body>
 </html>
+
